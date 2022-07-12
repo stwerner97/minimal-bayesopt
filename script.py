@@ -144,6 +144,7 @@ def main(args: Namespace) -> None:
         bayesopt.optimize(1)
 
         for _ in range(args.niters - 1):
+            bayesopt.optimize(1)
             fig = bayesopt.render()
             pdf.savefig(fig)
 
