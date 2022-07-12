@@ -112,7 +112,7 @@ def main(args: Namespace) -> None:
     # Define parameters of acquisition function, minimization and surrogate.
     acquisition = {"acquisition": "expected_improvement", "xi": 0.01}
     minimizer_kwargs = {"method": "L-BFGS-B", "nrestarts": 25}
-    kernel = Matern(length_scale=1.0, length_scale_bounds=(1e-1, 10.0), nu=1.5)
+    kernel = 3.0 * Matern(length_scale=1.0, length_scale_bounds=(1e-1, 10.0), nu=1.5)
     surrogate = {"n_restarts_optimizer": 10, "kernel": kernel}
 
     # Random number generator used to train / test split.
